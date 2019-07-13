@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="icon" href="Tender__1.png" />
+    <title>
+        feedback
+    </title>
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript">
+  function validate(){
+
+var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})$/;//regular expression
+if(feedback.email.value.match(mailformat))
+{
+document.feedback.email.focus();
+return true;
+}
+else
+{
+alert("You have entered an invalid email address!");
+document.feedback.email.focus();
+return false;
+}
+}
+
+
+</script>
+
+
+    <style type="text/css">
+    fieldset{
+    	
+    	width: 50%;
+    	    }
+
+    	h1{
+    		color:white;
+    		width:50%;
+
+    	}
+    	body{
+    		background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.5)),url("../tender1.jpg");
+
+    	}
+    	body{
+    		color:white;
+    		font-size:20px;
+
+
+    	}
+    
+
+.placeicon{
+
+font-family: fontawesome;
+
+}
+
+input{
+	border-radius: 25px;
+	padding: 7px 5px;
+	background-color:white;
+
+}
+
+
+input[type=text],textarea{
+
+  border-radius: 25px;
+}
+input[type=text]:focus, textarea:focus {
+  border-radius: 25px;
+  background-color: #ddd;
+  border:none;
+  margin: 25px 6px 7px 0;
+    padding:5px;
+
+  }
+
+
+table{
+
+	padding:5px 8px;
+}
+textarea{
+	border-radius:25px;
+}
+button {
+	border-radius:25px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 10px;
+  margin: 5px 0;
+  border: none;
+  cursor: pointer;
+  width: 10%;
+  height:40px;
+}
+
+button:hover {
+
+  opacity: 0.8;
+}
+   
+
+
+    </style>
+</head>
+<body>
+	<center>
+<h1>FEEDBACK FORM</h1>
+
+	<fieldset>
+<form name="feedback-server" action="feedback_server.php" onsubmit="validate()"  method="post" >
+	<table>
+    <tr><th><b>Email :<sup>*</sup></b></th>
+    <td><input type="email" class="placeicon"  placeholder='&#xf007; Enter Email' name="email"></td></tr>
+
+    <tr><th><b>Name:<sup>*</sup></b></th>
+    <td><input type="text" min="4"  placeholder="Enter name" name="uname" required></td></tr>
+<tr><th>
+    <b>COMMENT:</b></th>
+    <td><textarea name="comment" min="30"
+    	cols="40" rows="6" class="placeicon" placeholder="&#xf086;give your feedback here" maxlength="150"></textarea><td></tr>
+
+  </table>
+<center><button type="submit" >POST</button></center>
+
+</form>
+</fieldset>
+</center>
+
+</body>
+</html>
